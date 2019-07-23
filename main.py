@@ -45,8 +45,8 @@ def getPersonality(clothes1, clothes2):
 		print('ye')
 # the handler section
 class MainHandler(webapp2.RequestHandler):
-  	def get(self):  # for a get request
-		self.response.write('Greetings')  # the response
+  	def get(self):
+		self.response.write('Greetings')
 
 class AvatarHandler(object):
 	def get(self):
