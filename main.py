@@ -46,26 +46,29 @@ def getPersonality(clothes1, clothes2):
 # the handler section
 class MainHandler(webapp2.RequestHandler):
   	def get(self):
+  		welcome_template = the_jinja_env.get_template('templates/welcome.html')
 		self.response.write('Greetings')
+		self.response.write(welcome_template.render())
 
 class AvatarHandler(object):
 	def get(self):
 		print('Hello!')
 
 	def post(self):
-		prediction_template = JINJA_ENVIRONMENT.get_template('templates/fortune.html')
+		
 		print('Hello')
-		"""avatar = self.request.get('userAvatar')
+		avatar = self.request.get('userAvatar')
 		personality = getPersonality(self.request.get(''))
 		avatar = {
-		"personality": personality
+		"personality": personality,
 		"accuracy": random.randint(0, 100)
 		}
-		self.response.write(welcome_template.render(avatar))"""
+		self.response.write(welcome_template.render(avatar))
 
 
 # the app configuration section	
 app = webapp2.WSGIApplication([
   #('/', MainPage),
   ('/', MainHandler),
+  ('/avatar', AvatarHandler)
   ], debug=True)
