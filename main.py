@@ -47,7 +47,6 @@ def getPersonality(clothes1, clothes2):
 class MainHandler(webapp2.RequestHandler):
   	def get(self):
   		welcome_template = the_jinja_env.get_template('templates/welcome.html')
-		self.response.write('Greetings')
 		self.response.write(welcome_template.render())
 
 class AvatarHandler(object):
@@ -55,7 +54,6 @@ class AvatarHandler(object):
 		print('Hello!')
 
 	def post(self):
-		
 		print('Hello')
 		avatar = self.request.get('userAvatar')
 		personality = getPersonality(self.request.get(''))
@@ -66,9 +64,17 @@ class AvatarHandler(object):
 		self.response.write(welcome_template.render(avatar))
 
 
+class QuizHandler(object):
+	def get(self):
+		quiz_template = the_jinja_env.get_template('templates/quiz.html')
+		self.response.write('Hi!')
+		
+
+
 # the app configuration section	
 app = webapp2.WSGIApplication([
   #('/', MainPage),
   ('/', MainHandler),
-  ('/avatar', AvatarHandler)
+  ('/avatar', AvatarHandler),
+  ('/quiz', QuizHandler)
   ], debug=True)
