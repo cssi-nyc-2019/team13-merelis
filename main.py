@@ -49,9 +49,10 @@ class MainHandler(webapp2.RequestHandler):
   		welcome_template = the_jinja_env.get_template('templates/welcome.html')
 		self.response.write(welcome_template.render())
 
-class AvatarHandler(object):
+class AvatarHandler(webapp2.RequestHandler):
 	def get(self):
-		print('Hello!')
+		create_template = the_jinja_env.get_template('templates/avatar.html')
+		self.response.write(create_template.render())
 
 	def post(self):
 		print('Hello')
@@ -64,10 +65,10 @@ class AvatarHandler(object):
 		self.response.write(welcome_template.render(avatar))
 
 
-class QuizHandler(object):
+class QuizHandler(webapp2.RequestHandler):
 	def get(self):
 		quiz_template = the_jinja_env.get_template('templates/quiz.html')
-		self.response.write('Hi!')
+		self.response.write(quiz_template.render())
 		
 
 
