@@ -2,79 +2,24 @@
 <html>	
   <head>
     <style>
-      h1{
-  
-  height: 50px;
-  
-  position: relative;
-  -webkit-animation: mymove 10s ; /* Safari 4.0 - 8.0 */
-  animation: mymove 10s ;
-        }
-      /* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
-  from {left: 0px;}
-  to {left: 360px;}
-}
-
-@keyframes mymove {
-  from {left: 0px;}
-  to {left: 360px;}
-}
-      
-      h2{
-  
-  height: 50px;
-  
-  position: relative;
-  -webkit-animation: mymove 5s ; /* Safari 4.0 - 8.0 */
-  animation: mymove 5s ;
-        }
-      /* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-
-@keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-      
-      
-      body {
-      animation: colorchange 2000000s; /* animation-name followed by duration in seconds*/
-         /* you could also use milliseconds (ms) or something like 2.5s */
-      -webkit-animation: colorchange 120s; /* Chrome and Safari */
-    }
-
-    @keyframes colorchange
-    {
-      0%   {background: red;}
-      25%  {background: yellow;}
-      50%  {background: blue;}
-      75%  {background: green;}
-      100% {background: red;}
-    }
-
-    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-    {
-      0%   {background: red;}
-      25%  {background: yellow;}
-      50%  {background: blue;}
-      75%  {background: green;}
-      100% {background: red;}
-    }
-      
-      
-      
     
-  </style>
+    </style>
 	<meta charset="utf-8">
 	<title>Avatar quiz</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
   </head>
 	<body>
+
+		<style>
+			body{
+				text-align: center;
+				background-color: red;
+			}
+			label{
+				font-size: 20px;
+			}
+		</style>
+
   <header></header>
 	<main>
     <button id="try-again" type="Submit" >Try Again</button>
@@ -83,7 +28,7 @@
 
 	<h1>What is your characters personality</h1>
 		 
-     <h2>You see and old man crossing?</h2>
+     <h2>You see an old man crossing the streeet. Whaddya do?</h2>
 		<img src="https://cdn.pixabay.com/photo/2017/07/24/16/03/old-man-crossing-street-2535156_960_720.jpg" id="kick" width="500px" height="500px">
 	<br>
 	<input type="radio" id="q1a" name="q1">
@@ -91,34 +36,41 @@
 	<br>
 
 	<input type="radio" id="q1b" name="q1">
-  <label for="q1b">Walk past him</label>
+  <label for="q1b">Push him</label>
 	<br>
 
 	<input type="radio" id="q1c" name="q1">
-	<label for="q1c">Push him</label>
+	<label for="q1c">Walk past him</label>
 	<br>
 
+	<input type="radio" id="q1d" name="q1">
+	<label for="q1d">I'll help him, for a price of course</label>
+	<br>
 
 	</div>
 	<div class="question">
-	<h2>You see a women drop $100 on the ground?</h2>
+	<h2>You see a woman drop $100 on the ground. Whaddya do?</h2>
 	<img src="https://content.artofmanliness.com/uploads/2016/06/shutterstock_375378958_bw.jpg" id="boss" width="500px" height="500px">
 	<br>
 	<input type="radio" id="q2a" name="q2">
-	<label for="q2a">pick it up give it back to her</label>
+	<label for="q2a">Pick it up give it back to her</label>
 	<br>
 
-	<div id="q2b"><input type="radio" id="q2b" name="q2">
-	<label for="q2b">walk past it and say nothing</label>
+	<input type="radio" id="q2b" name="q2">
+	<label for="q2b">Give back the $100 to disract and steal some more while she isn't looking</label>
 	<br>
 
 	<input type="radio" id="q2c" name="q2">
-	<label for="q2c">pick it up and keep it</label>
+	<label for="q2c">Leave it alone</label>
+	<br>
+
+	<input type="radio" id="q1c" name="q1">
+	<label for="q1c">Pocket the money</label>
 	<br>
 
 	</div>
 	<div class="question">
-	<h2>you are asked to donate to a poor famely</h2>
+	<h2>You are asked to donate to a poor family. Your Response?</h2>
 	<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBUQEBIQEBAVFRAVFhAPEA8PEBAQFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGC0dHx8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALkBEAMBEQACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAQIDBAUGB//EAD4QAAIBAgQDBQUGBAQHAAAAAAABAgMRBBIhMQVBURNhcYGRBiIyobEUQnLB0fAzUmLhByNj8RVTgpKissL/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIDBAUG/8QALhEBAQACAQMDBAECBwEBAAAAAAECEQMSITEEQVETIjJhcYGRFCMzobHB8EIF/9oADAMBAAIRAxEAPwD1HBPQ1rnjRiyFz0QFCSMkIwGsBkiUK8tLhCBPUlC1CRCT7gOTCT4sCRMhJ1wAgC5AOuAXALgNkyRFJgJcIMrPQCvQZKFfi3wiFT8LoZaa6vVkJi6ElSAcAoASGyAysETWcaECq6VEJKAjARkhrAYyUKtfRkxWqt9QhZpSCUqkQk5MCRMJPjIhJ6YC3AIvYBbgGYBMwDJSCEbYAmBHXegQr0Jakh1annaXLn4AXEQsckA5J9ADyAVMAJDJMIZeD5+JNUjQgVXTIhIAAEZIawGSJQqYzZMRFUVLUlVZpyCUqZCUiYD0wHphJ6kA7MQBPYJCe4COQQRskNbIDGyQXIEdd6EoVKM9QheormFomISegHJhJ1yAANcehO0I5slDLwj1ZNUjRplV0qIScAWAayQjAjkShUxqvG3Mrc5j5WmFyZ2Voz+v+l56f9pIVbcvmPr/AKPoftLHELncTnx90Xhy9ksK0XzX0LzPG+6lwynsmTLqnqQScpAPT0IC3CSKQQRagRuvBbzXld/Qrc5FphTXiaf83/iyv1MU/TyRTxceV36Ii809lpw33RPFvovVlfrX4X+jPkfaL7prw1+RM5vmK3g+KPs7XvxalHqt14rkbY5TLwxywuPloU1oCJEEnIB6QSVIgACMlCKpsShlYXcmqNGmVXTIhJQFARgMZIirTyrv6dO9meeeu0Xww35UZu5g6EUokLRHJBbRjZWnSRsqaPp1XHb05FseS4+FcuKZLsMRFrmn0eq9Tpx5sb57OfLgynjuljM1l34Y2WeTlMkPci
             BE8RFbvyW/9imXJji0w4sslPE1pS3+HlFaLz6nPly2unHhkQWM92r9Mh0USjR6RY0WwRYa0BNhq7g78ua6omXV2rZuaaN09Y7P92OrG7m3LZq6PiSg+ISeiAoAA2RKEFXYlDKoP3
             iao0qZVeJkQktwFAY5rx8NQI6le3J37ymefSvhhtSm29d2c7pRORKdGNhbRkiFpEM2Uq+kTmVtNNDhlFTlrslfx6GnFj1Xuy5s+mdmpPDQatZLvSsdFwxvs5ZyZS+WTVThJ20a+
@@ -129,11 +81,11 @@
 	<br>
 
 	<input type="radio" id="q3a" name="q3">
-	<label for="q3a">I don't have time for this trash</label>
+	<label for="q3a">Give $12 to charity</label>
 	<br>
 
 	<input type="radio" id="q3b" name="q3">
-	<label for="q3b">give $12 towards the donations</label>
+	<label for="q3b">Leave trash to be trash</label>
 	<br>
 
 	<input type="radio" id="q3c" name="q3">
@@ -141,7 +93,7 @@
 	<br>
 
 	<input type="radio" id="q3d" name="q3">
-	<label for="q3d">flash your money in their faces and call them poor</label>
+	<label for="q3d">Flash your money in their faces and call them poor</label>
 	<br>
 	</div>
 	<div class="question">
@@ -151,19 +103,19 @@
 	<br>
 
 	<input type="radio" id="q4a" name="q4">
-	<label for="q4a">Just a normal one</label>
+	<label for="q4a">Fun one with friends!</label>
 	<br>
 
 	<input type="radio" id="q4b" name="q4">
-	<label for="q4b">a rich life where every one looks up to you</label>
+	<label for="q4b">One where I get to H U R T people</label>
 	<br>
 
 	<input type="radio" id="q4c" name="q4">
-	<label for="q4c">A fun one with my friends!</label>
+	<label for="q4c">Just a normal one</label>
 	<br>
 
 	<input type="radio" id="q4d" name="q4">
-	<label for="q4d">One where I get to bite people to death</label>
+	<label for="q4d">One where I have a whole buncha' money!</label>
 	<br>
 	</div>
 	<div class="question">
@@ -172,19 +124,19 @@
 	<br>
 
 	<input type="radio" id="q5a" name="q5">
-	<label for="q5a">dog</label>
+	<label for="q5a">Dog</label>
 	<br>
 
 	<input type="radio" id="q5b" name="q5">
-	<label for="q5b">lion</label>
+	<label for="q5b">Coyote</label>
 	<br>
 
 	<input type="radio" id="q5c" name="q5">
-	<label for="q5c">cat</label>
+	<label for="q5c">Turtle</label>
 	<br>
 
 	<input type="radio" id="q5d" name="q5">
-	<label for="q5d">turtle</label>
+	<label for="q5d">Cat</label>
 	<br>
 	</div>
 
@@ -202,6 +154,129 @@
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
-	</body>
+	
+  <script>
+  $(document).ready(function(){
+
+$("#try-again").click(resetQuiz);
+$("#submit-form").click(processResults);
+let description= null;
+let portrait = null;
+
+
+function getPersonality(){
+
+let score = 0
+let personality = null;
+  
+let bullyDictionary = {
+q1a: 4,
+q1b: 3,
+q1c: 2,
+q1d: 1
+};
+let bossDictionary = {
+q2a: 4,
+q2b: 3,
+q2c: 2,
+q2d: 1
+};
+let weaponDictionary = {
+q3a: 4,
+q3b: 3,
+q3c: 2,
+q3d: 1
+};
+let lifestyleDictionary = {
+q4a: 4,
+q4b: 3,
+q4c: 2,
+q4d: 1
+};
+let animeDictionary = {
+q5a: 4,
+q5b: 3,
+q5c: 2,
+q5d: 1
+};
+
+let q1 = $('input[name="q1"]:checked').attr('id');    
+let q2 = $('input[name="q2"]:checked').attr('id'); 
+let q3 = $('input[name="q3"]:checked').attr('id');
+let q4 = $('input[name="q4"]:checked').attr('id');
+let q5 = $('input[name="q5"]:checked').attr('id');
+
+score += bullyDictionary[q1]+ bossDictionary[q2]+ weaponDictionary[q3]+ lifestyleDictionary[q4]+ animeDictionary[q5];
+
+console.log(q1);
+console.log(q2);
+console.log(q3);
+console.log(q4);
+console.log(q5);
+console.log(score);
+
+if(score<=20 && score>=16){
+personality="Kind";
+description = "You show kindness and empathy towards others. You always are down to help out with everything, as long as it's just. Well, except for helping with that bank robery, but that doesn't matter";
+portrait = "tsuna-san.jpg";
+console.log(personality);
+}
+else if(score<=16 && score>=11){
+personality="Mean";
+description = "You are very rough around the edges and very mean towards others, especially your friends. But you care, you just have an odd way of showing it...Ya Big Ole' Meanie!";
+portrait = "gokudera-san.jpg";
+console.log(personality);
+}
+else if(score<=10 && score>=6){
+personality="Passive";
+description = "You are friends with very few, and not very approaching or forward. However, you make up for it by being very kind to your true friends, and you tend to be animated.";
+portrait = "yamamoto-san.jpg";
+console.log(personality);
+}
+else if(score<=5 && score>=0){
+personality="Selfish";
+description="You are a Meowth. 'What does that mean?', you ask, well you are particulary greedy with what is and isn't yours. You didn't share your toys in the playpin. You only share to those whom you truly trust, you are also very funny.";
+portrait = "hibari-san.jpg";
+console.log(personality);
+}
+return personality;
+
+}
+
+function processResults(){
+let q1 = $('input[name="q1"]:checked').attr('id');    
+let q2 = $('input[name="q2"]:checked').attr('id'); 
+let q3 = $('input[name="q3"]:checked').attr('id');
+let q4 = $('input[name="q4"]:checked').attr('id');
+let q5 = $('input[name="q5"]:checked').attr('id');
+if(q1==null||q2==null||q3==null||q4==null||q5==null){
+alert("Shtop being shtupid! Answer all the ?'s!");
+}
+else{
+let personality = getPersonality();
+$("#quiz-wrapper").hide();
+$("#results").show();
+$("#try-again").show();
+$("#results").append("<h1>Congrats! Your personality is " +personality+"!</h1>");
+$("#results").append("<h1> "+description+":)</h1>");	
+$("#results").append('<img src="'+portrait+'">');
+}
+}
+
+    function resetQuiz(){
+$("#try-again").hide();
+$("#results").hide();
+$("#quiz-wrapper").show();
+q1:checked=false;
+q2:checked=false;
+q3:checked=false;
+q4:checked=false;
+q5:checked=false;
+}
+
+});
+  
+  </script>
+  </body>
 
 </html>
