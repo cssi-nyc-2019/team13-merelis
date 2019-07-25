@@ -12,37 +12,76 @@ the_jinja_env = jinja2.Environment(
   autoescape=True)
 
 # other functions should go above the handlers or in a separate file
-def getPersonality(clothes1, clothes2):
-	if clothes1 == "short-sleeve1":
-		personality = "You are a stand out person with a strong personality"
+def getSkin(tone):
+	if tone == "tone1":
+		skinTone = "body.png"
 
-	elif clothes1 == "short-sleeve2":
-		personality = "You keep to yourself, but you have a pretty cool personality"
+	elif tone == "tone2":
+		skinTone = "body1.png"
 
-	elif clothes1 == "short-sleeve3":
-		personality = "You are quite shy, even though you are actually a dope person, you have a passive personality"
+	elif tone == "tone3":
+		skinTone = "body2.png"
 
-	elif clothes1 == "long-sleeve1":
-		print('ye')
+	return skinTone
 
-	elif clothes1 == "long-sleeve2":
-		print('ye')
+def getHair(hair):
+	if hair == "hair1":
+		hairStyle = "hairG.png"
 
-	elif clothes1 == "long-sleeve3":
-		print('ye')
-		
-	if clothes2 == "pants1":
-		print('ye')
-	elif clothes2 == "pants2":
-		print('ye')
-	elif clothes2 == "pants3":
-		print('ye')
-	elif clothes2 == "shorts1":
-		print('ye')
-	elif clothes2 == "shorts2":
-		print('ye')
-	elif clothes2 == "shorts3":
-		print('ye')
+	elif hair == "hair2":
+		hairStyle = "hairG1.png"
+
+	elif hair == "hair3":
+		hairStyle = "hairB1.png"
+
+	elif hair == "hair4":
+		hairStyle = "hairB.png"
+
+	return hairStyle
+	
+def getShirt(shirt):	
+	if shirt == "ss1":
+		shirtType = "shirt2.png"
+
+	elif shirt == "ss2":
+		shirtType = "shirt1.png"
+
+	elif shirt == "ss3":
+		shirtType = "shirt.png"
+
+	elif shirt == "ls1":
+		shirtType = "Lshirt1.png"
+
+	elif shirt == "ls2":
+		shirtType = "Lshirt.png"
+
+	elif shirt == "ls3":
+		shirtType = "Lshirt2.png"
+
+		return shirtType
+
+
+def getPants(pants):
+	if pants == "s1":
+		pantsType = "shorts2.png"
+
+	elif pants == "s2":
+		pantsType = "shorts1.png"
+
+	elif pants == "s3":
+		pantsType = "shorts.png"
+
+	elif pants == "j1":
+		pantsType = "pants1.png"
+
+	elif pants == "j2":
+		pantsType = "pants2.png"
+
+	elif pants == "j3":
+		pantsType = "pants.png" 
+
+	return pantsType 
+
 # the handler section
 class MainHandler(webapp2.RequestHandler):
   	def get(self):
@@ -57,6 +96,12 @@ class AvatarHandler(webapp2.RequestHandler):
 class ResultsHandler(object):
 	def post(self):
 		results_template = the_jinja_env.get_template('templates/results.html')
+		
+		skinTone = getSkin(self.request.get('Skin'))
+		hairStyle = getHair(self.request.get('Hair'))
+		shirtType = getShirt(self.request.get('Shirt'))
+		pantsType = getPants(self.request.get('Pants'))
+
 		avatar = self.request.get('userAvatar')
 		personality = getPersonality(self.request.get(''))
 		avatar = {

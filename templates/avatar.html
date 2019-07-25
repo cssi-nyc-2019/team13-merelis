@@ -1,168 +1,130 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href="https://fonts.googleapis.com/css?family=Fascinate&display=swap" rel="stylesheet">
-</head>
-<header>
-</header>
-
-<body>
-
-	<style>
-		body{
-			text-align: center;
-			font-family: 'Fascinate', cursive;
-			animation: colorchange 50s; /* animation-name followed by duration in seconds*/
-         /* you could also use milliseconds (ms) or something like 2.5s */
-      		-webkit-animation: colorchange 50s; /* Chrome and Safari */
-    		}
-
-	    @keyframes colorchange
-	    {
-	      0%   {background: red;}
-	      25%  {background: yellow;}
-	      50%  {background: blue;}
-	      75%  {background: green;}
-	      100% {background: red;}
-	    }
-
-	    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-	    {
-	      0%   {background: red;}
-	      25%  {background: yellow;}
-	      50%  {background: blue;}
-	      75%  {background: green;}
-	      100% {background: red;}
-	    }
-			}
-
-		button{
-			font-size: 32px;
-			padding: 20px;
-		}
-
-	</style>
-	<h1>My Mini Me</h1>
-
-	<h1>What does your mini me look like</h1>
-		 
-	<form method="post" action="/results">
-
-	<div class="question">
-	<h2>whats your skin tone</h2>
-	<br>
-	<select>
-		<option value="Pale">Pale(JB)</option>
-		<option value="Tan">Tan(Drake)</option>
-		<option value="Brown">Brown(Offset)</option>
-	</select>
-
-  <div class = "skin">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(19).png?v=1563989532432" width ="250" height ="250">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(18).png?v=1563989532387" width = "250" height ="250">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(20).png?v=1563989532476" width ="250" height = "250">  
-  </div>
+    <link rel= "stylesheet" type= "text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <h1 id="header">My Mini Me</h1>
+  
+  <body>
+    <h1>What does your Mini-Me look like?</h1>
     
-	</div>
-	
-	<h2>what hair style do you have</h2>
-	<br>
-	<select>
-		<option value="Low Cut">Low Cut</option>
-		<option value="Low Cut">Afro</option>
-		<option value="Low Cut">Buns(Twin Buns make no sense)</option>
-		<option value="Low Cut">PonyTail with Bangs(There is no PonyTail WITHOUT Bangs)</option>
-	</select>
-  
-  <div class = "hair">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(4).png?1563989596036" width = "250" height ="250">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(5).png?1563989596089" width ="250" height = "250">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(7).png?1563989596228" width ="250" height = "250">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(6).png?1563989596289" width ="250" height = "250">
-  </div>
-  
-	</div>
-	
-  <div class="question">
-	<h2>what shirt do you have on</h2>
-	<br>
+      <div class="question">
+      <h2>whats your skin tone?</h2>
+      <br>   
+        <div class = "skin">
+        <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(19).png?v=1563989532432" width ="250" height ="250">
+        <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(18).png?v=1563989532387" width = "250" height ="250">
+        <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(20).png?v=1563989532476" width ="250" height = "250">  
+        </div>
+          <select id="skin" name="Skin">
+            <option value="tone1">Pale</option>
+            <option value="tone2">Tan</option>
+            <option value="tone3">Brown</option>
+            <option value=""></option>
+          </select>
+          <br>
+      </div>
+    
+        <div class ="question">
+        <h2>what hair style do you have?</h2>
+        <br>
+          <div class = "hair">
+          <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(4).png?1563989596036" width = "250" height ="250">
+          <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(5).png?1563989596089" width ="250" height = "250">
+          <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(7).png?1563989596228" width ="250" height = "250">
+          <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(6).png?1563989596289" width ="250" height = "250">
+          </div>
+          <select id="hair" name="Hair">
+            <option value="hair1">Pony Tail</option>
+            <option value="hair2">Buns</option>
+            <option value="hair3">Low Cut</option>
+            <option value="hair4">Afro</option>
+          </select>       
+        </div>
+    
+          <div class="question">
+          <h2>what shirt do you have on?</h2>
+          <h5>short sleeve(ss) long sleeve(ls)</h5>
+          <br>
+            <div class = "shirts">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(14).png?1563989596596" width = "150" height ="150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(12).png?1563989597155" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(13).png?1563989597321" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(15).png?1563989597240" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(16).png?1563989597410" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(17).png?1563989597530" width ="150" height = "150">
+            </div>
+            <select id="shirt" name="Shirt">
+              <option value="ss1">black (ss)</option>
+              <option value="ss2">blue (ss)</option>
+              <option value="ss3">orange (ss)</option>
+              <option value="ls1">purple (ls)</option>
+              <option value="ls2">white (ls)</option>
+              <option value="ls3">gray (ls)</option>
+            </select>
+          </div>
 
-	<input type="radio" id="q3a" name="q3">
-	<label for="q3a">black (ss)</label>
-	<br>
+            <div class="question">
+            <h2>what type pants do you have on?</h2>
+            <br>
+            <div class = "pants">    
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(9).png?1563989596347" width = "150" height ="150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(8).png?1563989596442" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fshorts.png?1563984154359" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(10).png?1563989596521" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(11).png?1563989596680" width ="150" height = "150">
+            <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpants.png?1563984153909" width ="150" height = "150">
+            </div>
+              <select id="pants" name="Pants">
+                <option value="s1">black shorts</option>
+                <option value="s2">pink shorts</option>
+                <option value="s3">yellow shorts</option>
+                <option value="j1">black jeans</option>
+                <option value="j2">blue jeans</option>
+                <option value="j3">orange jeans</option>
+              </select>
+            </div>
+          <br>
+        <button id="submit-form" type="Submit">Submit</button>
+      <div id="results"></div>
+  </body>
 
-	<input type="radio" id="q3b" name="q3">
-	<label for="q3b">orange (ss)</label>
-	<br>
+</html>
 
-	<input type="radio" id="q3c" name="q3">
-	<label for="q3c">blue (ss)</label>
-	<br>
+<style>
+  body{
+  text-align: center;
+  font-family:'Press Start 2P', cursive;	
+  position: center;
+  height: 200px;
+  background-color: white; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, brown , red); /* Standard syntax (must be last) */
+  }
+  #skin, #hair, #shirt, #pants{
+  border: none;
+  font-size: 20px;
+  border-bottom: 6px solid black;
+  background-color: transparent;
+  }
+  #skin:hover, #hair:hover, #shirt:hover, #pants:hover{
+  border-radius: 6px;
+  font-size: 20px;
+  border-color: black;
+  background-color: white;
+  }
+  #submit-form{
+  border-radius: 2px;
+  border-color: white;
+  font-size: 20px;
+  background-color: transparent;
+  }
+  header{
+    background-color:white;
+  }
+  #header {
+  padding: 80px;
+  text-align: center;
+  background: white;
+  color: black;
+  }
+</style>
 
-	<input type="radio" id="q3d" name="q3">
-	<label for="q3d">gray (ls)</label>
-	<br>
-
-	<input type="radio" id="q3e" name="q3">
-	<label for="q3e">white (ls)</label>
-	<br>
-
-	<input type="radio" id="q3f" name="q3">
-	<label for="q3f">purple (ls)</label>
-	<br>
-	<div class = "shirts">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(14).png?1563989596596" width = "150" height ="150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(12).png?1563989597155" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(15).png?1563989597240" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(13).png?1563989597321" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(16).png?1563989597410" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(17).png?1563989597530" width ="150" height = "150">
-    </div>
-  
-  </div>
-	
-	<div class="question">
-	<h2>what type pants do you have on</h2>
-	<br>
-
-	<input type="radio" id="q4a" name="q4">
-	<label for="q4a">black jeans</label>
-	<br>
-
-	<input type="radio" id="q4b" name="q4">
-	<label for="q4b">orange jeans</label>
-	<br>
-
-	<input type="radio" id="q4c" name="q4">
-	<label for="q4c">blue jeans</label>
-	<br>
-
-	<input type="radio" id="q4d" name="q4">
-	<label for="q4d">pink shorts</label>
-	<br>
-	
-	<input type="radio" id="q4e" name="q4">
-	<label for="q4e">yellow shorts</label>
-	<br>
-
-	<input type="radio" id="q4f" name="q4">
-	<label for="q4f">black shorts</label>
-	<br>
-
-  <div class = "pants">    
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(9).png?1563989596347" width = "150" height ="150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(8).png?1563989596442" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(10).png?1563989596521" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpixil-frame-0%20(11).png?1563989596680" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fpants.png?1563984153909" width ="150" height = "150">
-    <img src ="https://cdn.glitch.com/5328b537-3bd7-4315-bf2d-b7a1dff7e629%2Fshorts.png?1563984154359" width ="150" height = "150">
-  </div>
-	
-  </div>
-  <br>
-  <button><strong>Get Your Avatar</strong></button>
-</form>
-
-</body>
-
-</html>  
